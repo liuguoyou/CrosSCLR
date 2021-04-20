@@ -51,7 +51,7 @@ We only test our code on the following environment:
   # generate raw database for NTU-RGB+D
   $ python tools/ntu_gendata.py --data_path <path to nturgbd+d_skeletons>
 
-  # preprocess the above data for our method
+  # preprocess the above data for our method (for limited computing power, we resize the data to 50 frames)
   $ python feeder/preprocess_ntu.py
   ```
 
