@@ -48,7 +48,7 @@ We only test our code on the following environment:
   $ python feeder/preprocess_ntu.py
   ```
 
-## Training
+## Unsupervised Pre-Training
 
 - Example for training **3s-CrosSCLR**. You can train other models by using `.yaml` files at `config/` folder.
   ```bash
@@ -56,7 +56,7 @@ We only test our code on the following environment:
   $ python main.py pretrain_crossclr_3views --config config/CrosSCLR/crossclr_3views_xview.yaml
   ```
 
-## Evaluation
+## Linear Evaluation
 
 - Example for linear evaluation of **3s-CrosSCLR**. You can evaluate other models by using `.yaml` files at `config/linear_eval` folder.
   ```bash
