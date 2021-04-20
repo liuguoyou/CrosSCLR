@@ -83,7 +83,6 @@ Please cite our paper if you find this repo useful in your resesarch:
 @inproceedings{li2021crossclr,
   Title          = {3D Human Action Representation Learning via Cross-View Consistency Pursuit},
   Author         = {Linguo, Li and Minsi, Wang and Bingbing, Ni and Hang, Wang and Jiancheng, Yang and Wenjun, Zhang},
-  Author         = {Shanyan, Guan and Jingwei, Xu and Yunbo, Wang and Bingbing, Ni and Xiaokang, Yang},
   Booktitle      = {CVPR},
   Year           = {2021}
 }
