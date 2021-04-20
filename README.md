@@ -11,8 +11,6 @@ We only test our code on the following environment:
   - Python == 3.8.2
   - PyTorch == 1.4.0
   - CUDA == 11.1
-  - Nvidia TITAN Xp
-  - Ubuntu 18.04.5 LTS
 
 ## Installation
   ```bash
@@ -37,14 +35,9 @@ We only test our code on the following environment:
   ```
 
 ## Data Preparation
-- [NTU RGB+D](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Shahroudy_NTU_RGBD_A_CVPR_2016_paper.pdf) is a large-scale dataset for human action recognition.
-- [NTU RGB+D 120](https://arxiv.org/pdf/1905.04757.pdf) is the extended version of the "NTU RGB+D" dataset.
+- We use [NTU RGB+D](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Shahroudy_NTU_RGBD_A_CVPR_2016_paper.pdf) and [NTU RGB+D 120](https://arxiv.org/pdf/1905.04757.pdf) as our datasets.
 - Please click [here](http://rose1.ntu.edu.sg/Datasets/actionRecognition.asp) for more information about accessing the "NTU RGB+D" and "NTU RGB+D 120" datasets.
-- Only the **3D skeleton** modality is required in our experiments, you could also obtain it via:
- 
-  https://drive.google.com/open?id=1CUZnBtYwifVXS21yVg62T-vrPVayso5H
-  
-  https://drive.google.com/open?id=1tEbuaEqMxAV7dNc4fqu1O4M7mC6CJ50w
+- Only the **3D skeleton** modality is required in our experiments, you could also obtain it via: https://github.com/shahroudy/NTURGB-D
 - Please put the raw data in the directory `<path to nturgbd+d_skeletons>` and build the database of NTU RGB+Das:
 
   ```bash
