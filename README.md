@@ -12,6 +12,7 @@ We only test our code on the following environment:
   - PyTorch == 1.4.0
   - CUDA == 11.1
   - Nvidia TITAN Xp
+  - Ubuntu 18.04.5 LTS
 
 ## Installation
   ```bash
