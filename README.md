@@ -22,7 +22,7 @@ We only test our code on the following environment:
   $ pip install torch==1.4.0
 
   # Download our code
-  $ git clone https://github.com/LinguoLi/CrosSCLR
+  $ git clone https://github.com/LinguoLi/CrosSCLR.git
   $ cd CrosSCLR
 
   # Install torchlight
