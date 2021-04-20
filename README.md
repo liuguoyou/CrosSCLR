@@ -11,7 +11,7 @@ We only test our code on the following environment:
   - Python == 3.8.2
   - PyTorch == 1.4.0
   - CUDA == 11.1
-  - TITAN Xp
+  - Nvidia TITAN Xp
 
 ## Installation
   ```bash
