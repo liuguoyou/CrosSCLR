@@ -226,8 +226,8 @@ class NTUMotionProcessor(torch.utils.data.Dataset):
                 motion_data = motion_data[:, :self.t_length, :, :]
             data_numpy = data_numpy[:, :self.t_length, :, :]
         elif self.sampling == 'resize':
-            data_numpy = self.force_resize(data_numpy, length, self.t_length)
-            motion_data = self.force_resize(motion_data, length, self.t_length)
+            data_numpy = self.real_resize(data_numpy, length, self.t_length)
+            motion_data = self.real_resize(motion_data, length, self.t_length)
         else:
             raise TypeError('Invalid sampling type: ' % self.sampling)
 
@@ -256,19 +256,30 @@ class NTUMotionProcessor(torch.utils.data.Dataset):
         num = (abs(data[:, :, 0, :]).sum(axis=0).sum(axis=0) != 0) * 1.0
         return num
 
+    # @staticmethod
+    # def force_resize(data_numpy, length, crop_size):
+    #     C, T, V, M = data_numpy.shape
+    #     if length <= crop_size:
+    #         return data_numpy[:, :crop_size, :, :]
+    #     elif length > crop_size:
+    #         new_data = np.zeros([C, crop_size, V, M])
+    #         for i in range(M):
+    #             tmp = cv2.resize(data_numpy[:, :, :, i].transpose(
+    #                 [1, 2, 0]), (V, crop_size), interpolation=cv2.INTER_LINEAR)
+    #             tmp = tmp.transpose([2, 0, 1])
+    #             new_data[:, :, :, i] = tmp
+    #         return new_data.astype(np.float32)
+
     @staticmethod
-    def force_resize(data_numpy, length, crop_size):
+    def real_resize(data_numpy, length, crop_size):
         C, T, V, M = data_numpy.shape
-        if length <= crop_size:
-            return data_numpy[:, :crop_size, :, :]
-        elif length > crop_size:
-            new_data = np.zeros([C, crop_size, V, M])
-            for i in range(M):
-                tmp = cv2.resize(data_numpy[:, :, :, i].transpose(
-                    [1, 2, 0]), (V, crop_size), interpolation=cv2.INTER_LINEAR)
-                tmp = tmp.transpose([2, 0, 1])
-                new_data[:, :, :, i] = tmp
-            return new_data.astype(np.float32)
+        new_data = np.zeros([C, crop_size, V, M])
+        for i in range(M):
+            tmp = cv2.resize(data_numpy[:, :length, :, i].transpose(
+                [1, 2, 0]), (V, crop_size), interpolation=cv2.INTER_LINEAR)
+            tmp = tmp.transpose([2, 0, 1])
+            new_data[:, :, :, i] = tmp
+        return new_data.astype(np.float32)
 
     def get_relative_data(self, data_numpy):
         if self.data_type == 'relative':
