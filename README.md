@@ -50,7 +50,7 @@ We only test our code on the following environment:
 
 ## Unsupervised Pre-Training
 
-- Example for training **3s-CrosSCLR**. You can train other models by using `.yaml` files at `config/` folder.
+- Example for unsupervised pre-training of **3s-CrosSCLR**. You can train other models by using other `.yaml` files in `config/` folder.
   ```bash
   # train on NTU-RGB+D xview
   $ python main.py pretrain_crossclr_3views --config config/CrosSCLR/crossclr_3views_xview.yaml
@@ -58,15 +58,15 @@ We only test our code on the following environment:
 
 ## Linear Evaluation
 
-- Example for linear evaluation of **3s-CrosSCLR**. You can evaluate other models by using `.yaml` files at `config/linear_eval` folder.
+- Example for linear evaluation of **3s-CrosSCLR**. You can evaluate other models by using other `.yaml` files in `config/linear_eval` folder.
   ```bash
-  # evaluate model pretrained in NTU-RGB+D xview
+  # evaluate pre-trained model on NTU-RGB+D xview
   $ python main.py linear_evaluation --config config/linear_eval/linear_eval_crossclr_3views_xview.yaml --weights <path to weights>
   ```
   
  ## Results
 
-The **Top-1 accuracy** results on **NTU-RGB+D** dataset for the linear evalution of our methods are shown here:
+The **Top-1 accuracy** results on two datasets for the linear evaluation of our methods are shown here:
 
 | Model          | NTU 60 xsub (%) | NTU 60 xview (%) | NTU 120 xsub (%) | NTU 120 xset (%) |
 | :------------- | :-------------: | :--------------: | :--------------: | :--------------: |
@@ -77,7 +77,7 @@ The **Top-1 accuracy** results on **NTU-RGB+D** dataset for the linear evalution
 ---
 
 ## Citation
-Please cite our paper if you find this repo useful in your resesarch:
+Please cite our paper if you find this repository useful in your resesarch:
 
 ```
 @inproceedings{li2021crossclr,
@@ -89,7 +89,7 @@ Please cite our paper if you find this repo useful in your resesarch:
 ```
 
 ## Acknowledgement
-- The framework of current code is based on the old version of [ST-GCN](https://github.com/yysijie/st-gcn/blob/master/OLD_README.md) (Its new version is [MMSkeleton](https://github.com/open-mmlab/mmskeleton)).
+- The framework of our code is based on the old version of [ST-GCN](https://github.com/yysijie/st-gcn/blob/master/OLD_README.md) (Its new version is [MMSkeleton](https://github.com/open-mmlab/mmskeleton)).
 - [Awesome-Skeleton-based-Action-Recognition](https://github.com/niais/Awesome-Skeleton-based-Action-Recognition)
 - [mv-ignet](https://github.com/niais/mv-ignet)
 - [NTURGB-D](https://github.com/shahroudy/NTURGB-D)
