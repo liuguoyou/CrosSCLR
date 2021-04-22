@@ -38,7 +38,7 @@ We only test our code on the following environment:
 - We use [NTU RGB+D](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Shahroudy_NTU_RGBD_A_CVPR_2016_paper.pdf) and [NTU RGB+D 120](https://arxiv.org/pdf/1905.04757.pdf) as our datasets.
 - Please click [here](http://rose1.ntu.edu.sg/Datasets/actionRecognition.asp) for more information about accessing the "NTU RGB+D" and "NTU RGB+D 120" datasets.
 - Only the **3D skeleton** modality is required in our experiments, you could also obtain it via [NTURGB-D](https://github.com/shahroudy/NTURGB-D).
-- Please put the raw data in the directory `<path to nturgbd+d_skeletons>` and build the database of NTU RGB+D as:
+- Please put the raw data in the directory `<path to nturgbd+d_skeletons>` and build the NTU RGB+D database as:
 
   ```bash
   # generate raw database for NTU-RGB+D
